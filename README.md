@@ -1,8 +1,16 @@
 # image-ai
 
-A CLI tool for analyzing the contents of an image. This repo is currently a WIP so everything may not be complete or accurate yet.
+A CLI tool for analyzing the contents of an image. This repo is currently a WIP so everything may not be complete, accurate, or finalized.
 
-## Available Commands (more details coming soon)
+## Technologies and Packages Used
+- [Golang](https://golang.org/) - version >= 1.11 (must support Go modules)
+  - [Cobra](https://github.com/spf13/cobra)
+  - [Viper](https://github.com/spf13/viper)
+- [Amazon Rekognition](https://aws.amazon.com/rekognition/)
+- [Amazon S3](https://aws.amazon.com/s3/)
+- [Amazon Dynamo DB](https://aws.amazon.com/dynamodb/)
+
+## Available Commands
 *   `detect-objects`
 
     Detects objects in an image.
@@ -81,14 +89,6 @@ A CLI tool for analyzing the contents of an image. This repo is currently a WIP 
         _Required flags_
         - `--collection-name` [name of collection]
         - `--file-name` [file name to match the S3 key for the image file]
-
-## Technologies and Packages Used
-- [Golang](https://golang.org/) - make sure your version supports Go Modules
-  - [Cobra](https://github.com/spf13/cobra)
-  - [Viper](https://github.com/spf13/viper)
-- [Amazon Rekognition](https://aws.amazon.com/rekognition/)
-- [Amazon S3](https://aws.amazon.com/s3/)
-- [Amazon Dynamo DB](https://aws.amazon.com/dynamodb/)
 
 ## Setup
 1. Make sure you have [git](https://git-scm.com/downloads) and [golang](https://golang.org/doc/install) installed. Create an AWS account if you don't have one.
