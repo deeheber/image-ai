@@ -5,7 +5,6 @@ A CLI tool for analyzing the contents of an image. This repo is currently a WIP 
 ## Technologies and Packages Used
 - [Golang](https://golang.org/) - version >= 1.11 (must support Go modules)
   - [Cobra](https://github.com/spf13/cobra)
-  - [Viper](https://github.com/spf13/viper)
 - [Amazon Rekognition](https://aws.amazon.com/rekognition/)
 - [Amazon S3](https://aws.amazon.com/s3/)
 - [Amazon Dynamo DB](https://aws.amazon.com/dynamodb/)
