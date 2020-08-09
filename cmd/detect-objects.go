@@ -4,20 +4,24 @@ import (
 	"fmt"
 
 	"image-ai/utils"
+
 	"github.com/spf13/cobra"
 )
 
 var detectObjectsCmd = &cobra.Command{
 	Use:   "detect-objects",
 	Short: "Detects objects in an image",
-	Long: `Detects objects in an image`,
+	Long:  `Detects objects in an image`,
 	Run: func(cmd *cobra.Command, args []string) {
+		// Get AWS Creds
+
+		// Get image
 		imagePath, _ := cmd.Flags().GetString("image-path")
-
-		fmt.Println("In detect objects command")
 		getFileResponse := utils.GetFile(imagePath)
-
 		fmt.Printf("Get file response is %s", getFileResponse)
+
+		// Call detect labels
+		// Parse response
 	},
 }
 
