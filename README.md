@@ -55,19 +55,19 @@ A CLI tool for analyzing the contents of an image. This repo is currently a WIP 
 
         Create a new collection
 
-        ex. `./image-ai collection create --collection-name myCollection`
+        ex. `./image-ai collection create [collection name]`
 
-        _Required flags_
-        - `--collection-name` [name of collection]
+        _Required args_
+        - `collection name` name of collection
 
     - `delete`
 
         Delete a collection
 
-        ex. `./image-ai collection delete --collection-name myCollection`
+        ex. `./image-ai collection delete [collection name]`
 
-        _Required flags_
-        - `--collection-name` [name of collection]
+        _Required args_
+        - `collection name` name of collection
 
     - `add-image`
 

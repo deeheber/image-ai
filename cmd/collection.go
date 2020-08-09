@@ -9,72 +9,56 @@ import (
 var collectionCmd = &cobra.Command{
 	Use:   "collection",
 	Short: "Commands to manage collections",
-	Long: `Commands to manage collections`,
+	Long:  `Commands to manage collections`,
 }
 
 var collectionListCmd = &cobra.Command{
 	Use:   "list",
 	Short: "List collections",
-	Long: `List collections`,
+	Long:  `List collections`,
 	Run: func(cmd *cobra.Command, args []string) {
-		collecitonList()
+		fmt.Println("Collection list command")
 	},
-}
-
-func collecitonList() {
-	fmt.Println("Collection list command")
 }
 
 var collectionCreateCmd = &cobra.Command{
-	Use:   "create",
+	Use:   "create [collection name]",
 	Short: "Create a collection",
-	Long: `Create a collection`,
+	Long:  `Create a collection`,
+	Args:  cobra.ExactArgs(1),
 	Run: func(cmd *cobra.Command, args []string) {
-		collecitonCreate()
+		name := args[0]
+		fmt.Printf("Collection create with collection name %s \n", name)
 	},
-}
-
-func collecitonCreate() {
-	fmt.Println("Collection create command")
 }
 
 var collectionDeleteCmd = &cobra.Command{
-	Use:   "delete",
+	Use:   "delete [collection name]",
 	Short: "Delete a collection",
-	Long: `Delete a collection`,
+	Long:  `Delete a collection`,
+	Args:  cobra.ExactArgs(1),
 	Run: func(cmd *cobra.Command, args []string) {
-		collectionDelete()
+		name := args[0]
+		fmt.Printf("Collection delete with collection name %s \n", name)
 	},
-}
-
-func collectionDelete() {
-	fmt.Println("Collection delete command")
 }
 
 var collectionAddImageCmd = &cobra.Command{
 	Use:   "add-image",
 	Short: "Add an image to a collection",
-	Long: `Add an image to a collection`,
+	Long:  `Add an image to a collection`,
 	Run: func(cmd *cobra.Command, args []string) {
-		collectionAddImage()
+		fmt.Println("Collection add image command")
 	},
-}
-
-func collectionAddImage() {
-	fmt.Println("Collection add image command")
 }
 
 var collectionDeleteImageCmd = &cobra.Command{
 	Use:   "delete-image",
 	Short: "Delete an image from a collection",
-	Long: `Delete an image from a collection`,
+	Long:  `Delete an image from a collection`,
 	Run: func(cmd *cobra.Command, args []string) {
-		collectionDeleteImage()
+		fmt.Println("Collection delete image command")
 	},
-}
-
-func collectionDeleteImage() {
-	fmt.Println("Collection delete image command")
 }
 
 func init() {
