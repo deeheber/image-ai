@@ -90,6 +90,11 @@ A CLI tool for analyzing the contents of an image. This repo is currently a WIP 
         - `--collection-name` [name of collection]
         - `--file-name` [file name to match the S3 key for the image file]
 
+### Global Flags
+`--aws-region` aws region to use defaults `to us-west-2` if not provided
+
+`--aws-profile` aws profile to use defaults to `default` if not provided
+
 ## Setup
 1. Make sure you have [git](https://git-scm.com/downloads) and [golang](https://golang.org/doc/install) installed. Create an AWS account if you don't have one.
 2. This program authenticates with your AWS account credentials stored in `~/.aws/credentials`. If you don't have this setup yet install the AWS CLI and run `aws configure`. More info [here](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-quickstart.html#cli-configure-quickstart-config)

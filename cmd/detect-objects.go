@@ -2,9 +2,12 @@ package cmd
 
 import (
 	"fmt"
+	"os"
 
 	"image-ai/utils"
 
+	"github.com/aws/aws-sdk-go/aws"
+	"github.com/aws/aws-sdk-go/service/rekognition"
 	"github.com/spf13/cobra"
 )
 
@@ -14,15 +17,40 @@ var detectObjectsCmd = &cobra.Command{
 	Long:  `Detects objects in an image`,
 	Args:  cobra.ExactArgs(0),
 	Run: func(cmd *cobra.Command, args []string) {
-		// Get AWS Creds
-
 		// Get image
 		imagePath, _ := cmd.Flags().GetString("image-path")
-		getFileResponse := utils.GetFile(imagePath)
-		fmt.Printf("Get file response is %s", getFileResponse)
+		fileBlob := utils.GetFile(imagePath)
+
+		// Authenticate with AWS
+		awsRegion, _ := cmd.Flags().GetString("aws-region")
+		awsProfile, _ := cmd.Flags().GetString("aws-profile")
+		sess := utils.GetAWSSession(awsProfile, awsRegion)
 
 		// Call detect labels
+		svc := rekognition.New(sess)
+		input := &rekognition.DetectLabelsInput{
+			Image: &rekognition.Image{
+				Bytes: fileBlob,
+			},
+			MaxLabels:     aws.Int64(10),
+			MinConfidence: aws.Float64(70.000000),
+		}
+		result, err := svc.DetectLabels(input)
+
 		// Parse response
+		// TODO handle errors better
+		/*
+			https://docs.aws.amazon.com/sdk-for-go/v1/developer-guide/handling-errors.html
+			https://docs.aws.amazon.com/rekognition/latest/dg/error-handling.html#error-handling.MessagesAndCodes
+			https://docs.aws.amazon.com/sdk-for-go/api/aws/awserr/#Error
+		*/
+		if err != nil {
+			fmt.Println(err)
+			os.Exit(1)
+		}
+
+		// TODO finish formatting this
+		fmt.Printf("Result: %v\n", result)
 	},
 }
 

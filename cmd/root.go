@@ -10,7 +10,7 @@ import (
 var RootCmd = &cobra.Command{
 	Use:   "image-ai",
 	Short: "A CLI tool for analyzing the contents of an image",
-	Long: `A CLI tool for analyzing the contents of an image`,
+	Long:  `A CLI tool for analyzing the contents of an image`,
 }
 
 func Execute() {
@@ -18,4 +18,9 @@ func Execute() {
 		fmt.Println(err)
 		os.Exit(1)
 	}
+}
+
+func init() {
+	RootCmd.PersistentFlags().StringP("aws-region", "", "", "AWS region")
+	RootCmd.PersistentFlags().StringP("aws-profile", "", "", "AWS profile")
 }

@@ -2,8 +2,8 @@ package utils
 
 import (
 	"fmt"
-	"os"
 	"io/ioutil"
+	"os"
 )
 
 func GetFile(path string) []byte {
@@ -14,5 +14,6 @@ func GetFile(path string) []byte {
 		os.Exit(1)
 	}
 
+	fmt.Printf("\nFound file at %s\n", path)
 	return data
 }
