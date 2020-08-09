@@ -12,6 +12,7 @@ var detectObjectsCmd = &cobra.Command{
 	Use:   "detect-objects",
 	Short: "Detects objects in an image",
 	Long:  `Detects objects in an image`,
+	Args:  cobra.ExactArgs(0),
 	Run: func(cmd *cobra.Command, args []string) {
 		// Get AWS Creds
 

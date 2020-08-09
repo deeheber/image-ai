@@ -16,6 +16,7 @@ var collectionListCmd = &cobra.Command{
 	Use:   "list",
 	Short: "List collections",
 	Long:  `List collections`,
+	Args:  cobra.ExactArgs(0),
 	Run: func(cmd *cobra.Command, args []string) {
 		fmt.Println("Collection list command")
 	},
@@ -47,6 +48,7 @@ var collectionAddImageCmd = &cobra.Command{
 	Use:   "add-image",
 	Short: "Add an image to a collection",
 	Long:  `Add an image to a collection`,
+	Args:  cobra.ExactArgs(0),
 	Run: func(cmd *cobra.Command, args []string) {
 		fmt.Println("Collection add image command")
 	},
@@ -56,6 +58,7 @@ var collectionDeleteImageCmd = &cobra.Command{
 	Use:   "delete-image",
 	Short: "Delete an image from a collection",
 	Long:  `Delete an image from a collection`,
+	Args:  cobra.ExactArgs(0),
 	Run: func(cmd *cobra.Command, args []string) {
 		fmt.Println("Collection delete image command")
 	},
