@@ -32,7 +32,7 @@ var detectObjectsCmd = &cobra.Command{
 			Image: &rekognition.Image{
 				Bytes: fileBlob,
 			},
-			MaxLabels:     aws.Int64(10),
+			MaxLabels:     aws.Int64(5),
 			MinConfidence: aws.Float64(70.000000),
 		}
 		result, err := svc.DetectLabels(input)
@@ -49,8 +49,13 @@ var detectObjectsCmd = &cobra.Command{
 			os.Exit(1)
 		}
 
-		// TODO finish formatting this
-		fmt.Printf("Result: %v\n", result)
+		fmt.Printf("Labels found for image: %s\n\n", imagePath)
+
+		for _, label := range result.Labels {
+			fmt.Println("Name:", aws.StringValue(label.Name))
+			fmt.Printf("Confidence:%f\n", *label.Confidence)
+			fmt.Println("----------------------")
+	}
 	},
 }
 
