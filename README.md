@@ -103,6 +103,6 @@ For more information on configuration, see [AWS CLI configuration documentation]
 ## Running the Program
 1. Clone this repository and `cd` into the repo root directory.
 2. Run `go build` in your terminal. 
-This will create an executable`image-ai` folder.
+This will create an executable`image-ai` file.
 3. Run `./image-ai [additional arugments here]` to run the program.
-4. For a faster development iteration, instead of steps 3 and 4, you can also run `go run main.go [additional arugments here]`
+4. For a faster development iteration, instead of steps 2 and 3, you can also run `go run main.go [additional arugments here]`
