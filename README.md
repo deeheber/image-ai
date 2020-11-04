@@ -22,7 +22,7 @@ A CLI tool for analyzing the contents of an image.
 
     **Required flags** `--image-path` [relative path to image file]
 
-*   `describe-face`
+*   `describe-face` - WIP
 
     **Description** Detects the largest face in the image and returns a description of the face.
 
@@ -30,7 +30,7 @@ A CLI tool for analyzing the contents of an image.
 
     **Required flags** `--image-path` [relative path to image file]
 
-*   `compare-faces`
+*   `compare-faces` - WIP
 
      **Description** Compares the largest face in the source and the target image to identify if they are of the same person. The target image can be in a collection or supplied by the user.
 
@@ -42,7 +42,7 @@ A CLI tool for analyzing the contents of an image.
     - `--target-image-path` [relative path to image file]
     - `--collection` [collection name]
 
-*   `collection`
+*   `collection` - WIP
 
     Use the following commands to manage a collection of images.
 
